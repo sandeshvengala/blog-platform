@@ -1,0 +1,283 @@
+:root {
+  --bg-start: #f3f8ff;
+  --bg-end: #eef8ef;
+  --panel: #ffffff;
+  --text: #13213a;
+  --muted: #5f6f86;
+  --accent: #0d8a65;
+  --accent-hover: #0b7657;
+  --danger: #b53a3a;
+  --border: #dbe5f2;
+  --shadow: 0 18px 30px rgba(16, 44, 74, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background: linear-gradient(140deg, var(--bg-start), var(--bg-end));
+  min-height: 100vh;
+}
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(13, 138, 101, 0.14), transparent 35%),
+    radial-gradient(circle at 8% 80%, rgba(34, 83, 196, 0.1), transparent 30%);
+}
+
+.container {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 16px 50px;
+}
+
+.hero {
+  margin-bottom: 16px;
+  animation: rise 0.45s ease-out;
+}
+
+.eyebrow {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.hero h1 {
+  margin: 8px 0 6px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.subtext {
+  margin: 0;
+  color: var(--muted);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 16px;
+  box-shadow: var(--shadow);
+  animation: rise 0.5s ease-out;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(13, 138, 101, 0.12);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+button.ghost {
+  background: #f0f5fb;
+  color: var(--text);
+}
+
+button.ghost:hover {
+  background: #e2edf9;
+}
+
+button.danger {
+  background: #ffe7e7;
+  color: var(--danger);
+}
+
+button.danger:hover {
+  background: #ffd8d8;
+}
+
+button.mini {
+  font-size: 0.8rem;
+  padding: 6px 10px;
+}
+
+.posts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.posts-list {
+  display: grid;
+  gap: 14px;
+}
+
+.post-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.post-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+}
+
+.post-title {
+  margin: 0;
+}
+
+.post-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.post-content {
+  white-space: pre-wrap;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+.post-toolbar {
+  display: flex;
+  gap: 8px;
+}
+
+.comments-block {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+
+.comments-block h4 {
+  margin: 0 0 10px;
+}
+
+.comment-form {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.comment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.comment-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  background: #fbfdff;
+}
+
+.comment-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.comment-text {
+  margin: 6px 0 10px;
+  white-space: pre-wrap;
+}
+
+.empty {
+  border: 1px dashed var(--border);
+  padding: 14px;
+  border-radius: 10px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 24px 12px 40px;
+  }
+
+  .post-top {
+    flex-direction: column;
+  }
+}

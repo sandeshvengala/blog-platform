@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Blog Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <main class="container">
+      <header class="hero">
+        <p class="eyebrow">Simple and Clean</p>
+        <h1>Blog Platform</h1>
+        <p class="subtext">Create posts and comments instantly, no login needed.</p>
+      </header>
+
+      <section class="panel">
+        <h2 id="form-title">Create New Post</h2>
+        <form id="post-form" class="form-grid">
+          <input type="hidden" id="post-id" />
+          <div>
+            <label for="post-author">Author</label>
+            <input id="post-author" type="text" placeholder="Anonymous" />
+          </div>
+          <div>
+            <label for="post-title">Title *</label>
+            <input id="post-title" type="text" required />
+          </div>
+          <div class="full-width">
+            <label for="post-content">Content *</label>
+            <textarea id="post-content" rows="5" required></textarea>
+          </div>
+          <div class="actions full-width">
+            <button type="submit" id="save-post-btn">Publish Post</button>
+            <button type="button" class="ghost" id="cancel-edit-btn" hidden>
+              Cancel Edit
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="posts-header">
+          <h2>All Posts</h2>
+          <button id="refresh-btn" class="ghost">Refresh</button>
+        </div>
+        <div id="posts-list" class="posts-list"></div>
+      </section>
+    </main>
+
+    <template id="post-template">
+      <article class="post-card">
+        <div class="post-top">
+          <h3 class="post-title"></h3>
+          <span class="post-meta"></span>
+        </div>
+        <p class="post-content"></p>
+        <div class="post-toolbar">
+          <button class="ghost edit-post">Edit</button>
+          <button class="danger delete-post">Delete</button>
+        </div>
+        <div class="comments-block">
+          <h4>Comments</h4>
+          <form class="comment-form">
+            <input type="text" class="comment-author" placeholder="Your name (optional)" />
+            <textarea
+              class="comment-content"
+              rows="2"
+              placeholder="Write a comment..."
+              required
+            ></textarea>
+            <button type="submit">Add Comment</button>
+          </form>
+          <ul class="comment-list"></ul>
+        </div>
+      </article>
+    </template>
+
+    <template id="comment-template">
+      <li class="comment-item">
+        <div class="comment-top">
+          <strong class="comment-author"></strong>
+          <span class="comment-date"></span>
+        </div>
+        <p class="comment-text"></p>
+        <button class="danger mini delete-comment">Delete</button>
+      </li>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

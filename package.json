@@ -1,0 +1,18 @@
+{
+  "name": "simple-blog-platform",
+  "version": "1.0.0",
+  "description": "Simple blog platform with posts and comments",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
